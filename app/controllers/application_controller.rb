@@ -21,11 +21,15 @@ class AppController < Sinatra::Base
     end
 
     def this_user
-      User.find(session[:user_id]) if logged_in?
+      User.find(session[:user_id])
     end
 
     def logout
-      sessions.clear
+      session.clear
+    end
+
+    def show_greeting
+      session[:user_id] == params[:id].to_i ? "Hello #{this_user.first_name}"  : "#{User.find(params[:id]).first_name}'s Page"
     end
   end
 
