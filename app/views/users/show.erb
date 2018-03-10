@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <h1><%=show_greeting%></h1>
+    <ul>
+      <li>Some Wine</li>
+      <li>Some Beer</li>
+      <li>Some Whiskey</li>
+    </ul>
+    <form class="" action="/users/<%=this_user.id%>/logout" method="post">
+      <input type="submit" name="" value="Logout">
+    </form>
+
+  </body>
+</html>
