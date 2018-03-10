@@ -1,6 +1,7 @@
 class UserController < AppController
 
   get '/login' do
+    redirect "/users/#{this_user.id}" if logged_in?
     erb :"/users/login"
   end
 
@@ -24,9 +25,9 @@ class UserController < AppController
 
   post '/signup' do
     @user = User.new(params)
-    binding.pry
+    #binding.pry
 
-    if @user.save
+    if @user && @user.save
       session[:user_id] = @user.id
       redirect "/users/#{@user.id}"
     else
