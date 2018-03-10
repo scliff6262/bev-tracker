@@ -29,3 +29,6 @@ ActiveRecord::Schema.define(version: 20180309223717) do
   end
 
 end
+
+#user1 = User.create(first_name: "Sean", last_name: "Clifford", email: "cliff80@rocketmail.com", username: "scliff6", password: "password1")
+user1.beverages.build(name: "Ground Effect Cabernet", category: "Wine", rating: 3, comments: "really nice red wine, earthy palate")
