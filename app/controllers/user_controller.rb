@@ -14,4 +14,8 @@ class UserController < AppController
     end
   end
 
+  get '/signup' do
+    erb :new
+  end
+
 end
