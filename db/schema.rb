@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309223717) do
+ActiveRecord::Schema.define(version: 20180314172838) do
 
   create_table "beverages", force: :cascade do |t|
     t.string "name"
@@ -26,9 +26,7 @@ ActiveRecord::Schema.define(version: 20180309223717) do
     t.string "email"
     t.string "username"
     t.string "password_digest"
+    t.boolean "is_private"
   end
 
 end
-
-#user1 = User.create(first_name: "Sean", last_name: "Clifford", email: "cliff80@rocketmail.com", username: "scliff6", password: "password1")
-user1.beverages.build(name: "Ground Effect Cabernet", category: "Wine", rating: 3, comments: "really nice red wine, earthy palate")

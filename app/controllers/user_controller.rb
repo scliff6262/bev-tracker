@@ -24,8 +24,8 @@ class UserController < AppController
   end
 
   post '/signup' do
-    @user = User.new(params)
     #binding.pry
+    @user = User.new(params)
 
     if @user && @user.save
       session[:user_id] = @user.id
@@ -36,11 +36,20 @@ class UserController < AppController
   end
 
   get '/users/:id' do
-    erb :"/users/show"
+
+    if !logged_in?
+      erb :index
+    elsif this_user.id == params[:id].to_i
+      erb :"/users/show"
+    elsif User.find(params[:id]).is_private
+      erb :"/users/private"
+    else
+      erb :"/users/show"
+    end
   end
 
   post '/users/:id/logout' do
-    logout
+    logout if logged_in?
     redirect '/'
   end
 
