@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Bev</title>
+  </head>
+  <body>
+    <h1>Edit <%=@bev.name%></h1>
+
+    <form class="" action="/beverages/<%=@bev.id%>" id="newbev" method="post">
+      <input type="hidden" name="_method" value="PUT">
+      <label for="name">Beverage Name:</label>
+      <input type="text" name="name" value="<%=@bev.name%>">
+
+      <br></br>
+
+      <label for="rating">Select a category:</label>
+      <br></br>
+      <input type="radio" name="category" value="wine" <%="checked" if @bev.category == "wine"%>>Wine</input>
+      <input type="radio" name="category" value="beer" <%="checked" if @bev.category == "beer"%>>Beer</input>
+      <input type="radio" name="category" value="cocktail" <%="checked" if @bev.category == "cocktail"%>>Cocktail</input>
+      <input type="radio" name="category" value="whiskey" <%="checked" if @bev.category == "whiskey"%>>Whiskey</input>
+      <input type="radio" name="category" value="vodka" <%="checked" if @bev.category == "vodka"%>>Vodka</input>
+      <input type="radio" name="category" value="gin" <%="checked" if @bev.category == "gin"%>>Gin</input>
+      <input type="radio" name="category" value="rum" <%="checked" if @bev.category == "rum"%>>Rum</input>
+      <input type="radio" name="category" value="tequila" <%="checked" if @bev.category == "tequila"%>>Tequila</input>
+      <input type="radio" name="category" value="other" <%="checked" if @bev.category == "other"%>>Other</input>
+
+
+      <br></br>
+
+      <label for="rating">Select a rating:</label>
+      <br></br>
+      <input type="radio" name="rating" value="1" <%="checked" if @bev.rating == 1%>>1</input>
+      <input type="radio" name="rating" value="2" <%="checked" if @bev.rating == 2%>>2</input>
+      <input type="radio" name="rating" value="3" <%="checked" if @bev.rating == 3%>>3</input>
+      <input type="radio" name="rating" value="4" <%="checked" if @bev.rating == 4%>>4</input>
+      <input type="radio" name="rating" value="5" <%="checked" if @bev.rating == 5%>>5</input>
+
+      <br></br>
+
+      <label for="comments">Comments:</label>
+      <br></br>
+      <textarea name="comments" form="newbev" rows="8" cols="80"><%=@bev.comments%></textarea>
+
+      <br></br>
+
+      <input type="submit" name="" value="Update">
+
+    </form>
+    <form class="" action="/" method="get">
+      <input type="submit" name="" value="Cancel">
+    </form>
+  </body>
+</html>
