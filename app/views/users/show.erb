@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title><%=User.find(params[:id]).first_name%>'s Profile</title>
   </head>
   <body>
     <h1><%=show_greeting%></h1>
