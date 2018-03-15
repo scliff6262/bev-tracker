@@ -31,6 +31,10 @@ class AppController < Sinatra::Base
     def show_greeting
       session[:user_id] == params[:id].to_i ? "Hello #{this_user.first_name}"  : "#{User.find(params[:id]).first_name}'s Page"
     end
+
+    def displayed_user_bevs(user_id)
+      User.find(user_id).beverages
+    end
   end
 
 end
