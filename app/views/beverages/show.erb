@@ -13,5 +13,13 @@
       <p>User comments:</p>
       <p><%=@bev.comments%></p>
 
+      <form class="" action="/beverages/<%=@bev.id%>/edit" method="get">
+        <input type="submit" name="" value="Edit">
+      </form>
+
+      <form class="" action="/beverages/<%=@bev.id%>/delete" method="get">
+        <input type="submit" name="" value="Delete">
+      </form>
+
   </body>
 </html>
