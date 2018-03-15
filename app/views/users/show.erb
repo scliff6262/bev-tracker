@@ -9,9 +9,12 @@
     <p>Reviewed Beverages:</p>
     <ul>
       <%displayed_user_bevs(params[:id]).each do |bev_obj|%>
-      <li><a href="beverages/<%=bev_obj.id%>"><%=bev_obj.name%></a></li>
+      <li><a href="/beverages/<%=bev_obj.id%>"><%=bev_obj.name%></a></li>
       <%end%>
     </ul>
+    <form class="" action="/" method="get">
+      <input type="submit" name="" value="BevFeed">
+    </form>
     <form class="" action="/users/<%=this_user.id%>/logout" method="post">
       <input type="submit" name="" value="Logout">
     </form>
