@@ -16,7 +16,11 @@ class BeverageController < AppController
 
   get '/beverages/:id' do
     @bev = Beverage.find(params[:id])
-    erb :"/beverages/show"
+    if @bev.user.is_private
+      erb :'users/private'
+    else
+      erb :"/beverages/show"
+    end
   end
 
 end
