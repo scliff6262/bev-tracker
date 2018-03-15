@@ -6,10 +6,12 @@
   </head>
   <body>
     <h1><%=@bev.name%></h1>
-    <ul>
-      <li><%=@bev.category%></li>
-      <li><%=@bev.rating%></li>
-      <li><%=@bev.comments%></li>
-    </ul>
+    <h5><a href="/users/<%=@bev.user.id%>"><%=@bev.user.first_name%></a></h5>
+
+      <p>Category: <%=@bev.category.capitalize%></p>
+      <p>User Rating: <%=@bev.rating%></p>
+      <p>User comments:</p>
+      <p><%=@bev.comments%></p>
+
   </body>
 </html>
