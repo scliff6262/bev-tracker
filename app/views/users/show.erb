@@ -6,10 +6,11 @@
   </head>
   <body>
     <h1><%=show_greeting%></h1>
+    <p>Reviewed Beverages:</p>
     <ul>
-      <li>Some Wine</li>
-      <li>Some Beer</li>
-      <li>Some Whiskey</li>
+      <%displayed_user_bevs(params[:id]).each do |bev_obj|%>
+      <li><a href="beverages/<%=bev_obj.id%>"><%=bev_obj.name%></a></li>
+      <%end%>
     </ul>
     <form class="" action="/users/<%=this_user.id%>/logout" method="post">
       <input type="submit" name="" value="Logout">
