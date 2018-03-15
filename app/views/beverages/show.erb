@@ -13,6 +13,7 @@
       <p>User comments:</p>
       <p><%=@bev.comments%></p>
 
+      <%if this_user.beverages.include?(@bev)%>
       <form class="" action="/beverages/<%=@bev.id%>/edit" method="get">
         <input type="submit" name="" value="Edit">
       </form>
@@ -20,6 +21,15 @@
       <form class="" action="/beverages/<%=@bev.id%>/delete" method="get">
         <input type="submit" name="" value="Delete">
       </form>
+      <%else%>
+      <form class="" action="/" method="get">
+        <input type="submit" name="" value="Home">
+      </form>
+
+      <form class="" action="/beverages/<%=this_user.id%>" method="get">
+        <input type="submit" name="" value="My Profile">
+      </form>
+      <%end%>
 
   </body>
 </html>
