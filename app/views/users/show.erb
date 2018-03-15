@@ -6,6 +6,11 @@
   </head>
   <body>
     <h1><%=show_greeting%></h1>
+    <%if this_user == User.find(params[:id])%>
+    <form class="" action="/beverages/new" method="get">
+      <input type="submit" name="" value="Add a Bev">
+    </form>
+    <%end%>
     <p>Reviewed Beverages:</p>
     <ul>
       <%displayed_user_bevs(params[:id]).each do |bev_obj|%>
