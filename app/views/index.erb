@@ -18,6 +18,12 @@
   <%end%>
 <%end %>
 
-<form class="" action="/users/10/logout" method="post">
-  <input type="submit" name="" value="Reset">
-</form>
+<%if logged_in?%>
+  <form class="" action="/users/<%=this_user.id%>" method="get">
+    <input type="submit" name="" value="Home">
+  </form>
+
+  <form class="" action="/users/10/logout" method="post">
+    <input type="submit" name="" value="Logout">
+  </form>
+<%end%>
