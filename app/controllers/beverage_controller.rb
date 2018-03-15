@@ -1,6 +1,7 @@
 class BeverageController < AppController
 
   get '/beverages/new' do
+    redirect '/' unless logged_in?
 
     erb :'beverages/new'
   end
@@ -15,6 +16,8 @@ class BeverageController < AppController
   end
 
   get '/beverages/:id' do
+    redirect '/' unless logged_in?
+
     @bev = Beverage.find(params[:id])
     if @bev.user.is_private && this_user != @bev.user
       erb :'users/private'
@@ -24,6 +27,8 @@ class BeverageController < AppController
   end
 
   get '/beverages/:id/edit' do
+    redirect '/' unless logged_in?
+
     @bev = Beverage.find(params[:id])
     if this_user.beverages.include?(@bev)
       erb :'beverages/edit'
@@ -43,6 +48,8 @@ class BeverageController < AppController
   end
 
   get '/beverages/:id/delete' do
+    redirect '/' unless logged_in?
+
     @bev = Beverage.find(params[:id])
 
     if this_user.beverages.include?(@bev)
