@@ -42,4 +42,16 @@ class BeverageController < AppController
     redirect "/beverages/#{@bev.id}"
   end
 
+  get '/beverages/:id/delete' do
+    @bev = Beverage.find(params[:id])
+
+    if this_user.beverages.include?(@bev)
+      @bev.destroy
+      redirect "/users/#{this_user.id}"
+    else
+      redirect "/beverages/#{@bev.id}"
+    end
+
+  end
+
 end
