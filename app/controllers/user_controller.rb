@@ -24,7 +24,6 @@ class UserController < AppController
   end
 
   post '/signup' do
-    #binding.pry
     @user = User.new(params)
 
     if @user && @user.save
