@@ -23,4 +23,23 @@ class BeverageController < AppController
     end
   end
 
+  get '/beverages/:id/edit' do
+    @bev = Beverage.find(params[:id])
+    if this_user.beverages.include?(@bev)
+      erb :'beverages/edit'
+    else
+      redirect "/beverages/#{@bev.id}"
+    end
+  end
+
+  put '/beverages/:id' do
+    @bev = Beverage.find(params[:id])
+    @bev.name = params[:name]
+    @bev.category = params[:category]
+    @bev.rating = params[:rating]
+    @bev.comments = params[:comments]
+    @bev.save
+    redirect "/beverages/#{@bev.id}"
+  end
+
 end
