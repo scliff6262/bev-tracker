@@ -35,6 +35,11 @@ class AppController < Sinatra::Base
     def displayed_user_bevs(user_id)
       User.find(user_id).beverages
     end
+
+    def sort_bevs_by_rank
+      sorted_bevs = Beverage.all.find_all {|obj| !obj.user.is_private}.sort {|a, b| b.rating <=> a.rating}
+      sorted_bevs.first(10)
+    end
   end
 
 end
