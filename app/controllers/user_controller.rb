@@ -34,6 +34,7 @@ class UserController < AppController
       session[:user_id] = @user.id
       redirect "/users/#{@user.id}"
     else
+      flash[:message] = "All fields must be filled out AND Email and Username must be unique."
       redirect "/signup"
     end
   end
