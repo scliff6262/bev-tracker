@@ -19,10 +19,8 @@
   <input type="submit" name="" value="Add a Bev">
 </form>
 
-<br></br>
-
-<h4>User favorites:</h4>
-  <%sort_bevs_by_rank.each do |bev_obj|%>
+<h4>Recently reviewed by others:</h4>
+  <%ten_most_recently_reviewed.each do |bev_obj|%>
     <p><a href="/beverages/<%=bev_obj.id%>"><%=bev_obj.name%></a></p>
   <%end%>
 <%end %>
