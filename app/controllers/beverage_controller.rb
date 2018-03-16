@@ -14,6 +14,7 @@ class BeverageController < AppController
       @bev = this_user.beverages.last
       redirect "/beverages/#{@bev.id}"
     else
+      flash[:message] = "All fields must be completed, except for 'Comments:'"
       redirect "/beverages/new"
     end
   end
