@@ -1,3 +1,6 @@
+require 'sinatra/base'
+require 'rack-flash'
+
 class BeverageController < AppController
 
   get '/beverages/new' do

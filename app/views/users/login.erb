@@ -5,12 +5,14 @@
     <title>Login</title>
   </head>
   <body>
-    <!--
+
     <h1>Login</h1>
-    <%if !!@user%>
-    <p>Invalid User and/or Password, please re-enter</p>
-    <%end%>
-  -->
+
+    <% if flash.has?(:message) %>
+      <%= flash[:message] %>
+        <br></br>
+    <% end %>
+
     <form class="" action="/login" method="post">
       <label for="username">Username:</label>
       <input type="text" name="username" value="">

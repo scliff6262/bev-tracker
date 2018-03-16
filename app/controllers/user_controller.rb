@@ -1,3 +1,6 @@
+require 'sinatra/base'
+require 'rack-flash'
+
 class UserController < AppController
 
   get '/login' do
@@ -11,6 +14,7 @@ class UserController < AppController
       session[:user_id] = @user.id
       redirect "/users/#{@user.id}"
     else
+      flash[:message] = "Username and/or Password was incorrect. Please try again."
       redirect "/login"
     end
   end
