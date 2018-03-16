@@ -6,11 +6,11 @@
   </head>
   <body>
     <h1><%=@bev.name%></h1>
-    <h5><a href="/users/<%=@bev.user.id%>"><%=@bev.user.first_name%></a></h5>
+    <h3>Reviewed by <a href="/users/<%=@bev.user.id%>"><%=@bev.user.first_name%></a></h3>
 
-      <p>Category: <%=@bev.category.capitalize%></p>
-      <p>User Rating: <%=@bev.rating%></p>
-      <p>User comments:</p>
+      <p><b>Category:</b> <%=@bev.category.capitalize%></p>
+      <p><b>User Rating:</b> <%=@bev.rating%></p>
+      <p><b>User comments:</b></p>
       <p><%=@bev.comments%></p>
 
       <%if this_user.beverages.include?(@bev)%>
