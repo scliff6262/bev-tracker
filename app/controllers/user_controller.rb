@@ -45,7 +45,7 @@ class UserController < AppController
       erb :index
     elsif this_user.id == params[:id].to_i
       erb :"/users/show"
-    elsif User.find(params[:id]).is_private
+    elsif User.find(params[:id]).privacy == "true"
       erb :"/users/private"
     else
       erb :"/users/show"

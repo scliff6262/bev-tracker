@@ -40,7 +40,7 @@ class AppController < Sinatra::Base
     end
 
     def ten_most_recently_reviewed
-      sorted_bevs = Beverage.all.find_all {|obj| !obj.user.is_private}
+      sorted_bevs = Beverage.all.find_all {|obj| obj.user.privacy == "false"}
       sorted_bevs.last(10).reverse
     end
   end

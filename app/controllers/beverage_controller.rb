@@ -23,7 +23,7 @@ class BeverageController < AppController
     redirect '/' unless logged_in?
 
     @bev = Beverage.find(params[:id])
-    if @bev.user.is_private && this_user != @bev.user
+    if @bev.user.privacy == "true" && this_user != @bev.user
       erb :'users/private'
     else
       erb :"/beverages/show"
