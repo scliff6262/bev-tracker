@@ -10,6 +10,14 @@ First be sure to have Ruby installed. Then download this repository, change dire
 
 To run the app locally, make sure Shotgun is installed (which should have occurred after 'bundle'). Use the 'shotgun' command and use the resulting route in your web browser.
 
+## Video Walkthrough
+
+https://www.youtube.com/watch?v=1Aae8uhCbkg
+
+## Demo
+
+https://bev-tracker.herokuapp.com/
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/scliff6262/bev-tracker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
